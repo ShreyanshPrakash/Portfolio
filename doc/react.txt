@@ -1,0 +1,50 @@
+1. routing :
+
+<Route component={NoMatch} />
+
+For wildcard, either dont pass any path, and use the above one or use ** as path and pass the component to render
+
+
+2. MUST MUSTR React route for nested chidren
+
+<BrowserRouter>
+
+  <Route path="/" component={Frontpage} exact />
+  <Route path="/home" component={HomePage} />
+  <Route path="/about" component={AboutPage} />
+
+  <Route
+    path="/admin"
+    render={({ match: { url } }) => (       <---- nested desctructuring and then use render props to nest the routes
+      <>
+        <Route path={`${url}/`} component={Backend} exact />
+        <Route path={`${url}/home`} component={Dashboard} />
+        <Route path={`${url}/users`} component={UserPage} />
+      </>
+    )}
+  />
+
+</BrowserRouter>
+
+
+3. USeCallback is a method hence u need to call it...not like arrow methods where u pass the function as value and then just
+refer that variable in the code.
+
+const data = useCallback( () => somethinds , [] );
+
+<p>{ data() }</p>
+
+
+4. MUST MUST React hooks
+
+useEffect( () => {
+        useDispatch( GetPageContentAction( ) );
+    }, [ useDispatch ] )
+
+the above is an error as all the hooks must be called only inside the context of functional component or custom react hook.
+
+const dispatch = useDispatch();
+
+useEffect( () => {
+        dispatch( GetPageContentAction( ) );
+    }, [ useDispatch ] )

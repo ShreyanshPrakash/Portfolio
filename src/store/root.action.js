@@ -1,3 +1,4 @@
+import { getData } from "../component/http.service"
 
 const ActionTypes = {
 
@@ -9,7 +10,7 @@ const ActionTypes = {
 
 }
 
-// Static Actions
+// Plain Actions
 
 function InitiateApiCallAction( payload ){
     return{
@@ -18,8 +19,35 @@ function InitiateApiCallAction( payload ){
     }
 }
 
+function ApiErrorAction( payload ){
+    return{
+        type: ActionTypes.API_CALL_ERRORED,
+        payload: payload
+    }
+}
+
+function ApiSuccessAction( payload ){
+    return{
+        type: ActionTypes.API_CALL_SUCCESS,
+        payload: payload
+    }
+}
+
 
 // Async Actions
+
+function GetPageContentAction( payload ){
+
+    return async ( dispatch, getState ) => {
+        try{
+            let response = await getData( payload );
+            dispatch( ApiSuccessAction( response ) )
+        }catch( err ){
+            dispatch( ApiErrorAction( err ) )
+        }
+    }
+
+}
 
 
 
@@ -27,4 +55,7 @@ function InitiateApiCallAction( payload ){
 export {
     ActionTypes,
     InitiateApiCallAction,
+    ApiErrorAction,
+    ApiSuccessAction,
+    GetPageContentAction,
 }

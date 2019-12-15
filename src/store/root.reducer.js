@@ -46,6 +46,12 @@ const rootReducer = ( state = new InitialStateModel(), action ) => {
                     isPageLoading: true
                 }
             }
+
+        default:
+            return{
+                ...state
+            }
+        
     }
 
 }
