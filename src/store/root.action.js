@@ -40,10 +40,11 @@ function GetPageContentAction( payload ){
 
     return async ( dispatch, getState ) => {
         try{
+            dispatch( InitiateApiCallAction('Initiate') )
             let response = await getData( payload );
             dispatch( ApiSuccessAction( response ) )
         }catch( err ){
-            dispatch( ApiErrorAction( err ) )
+            dispatch( ApiErrorAction( err.response ) )
         }
     }
 

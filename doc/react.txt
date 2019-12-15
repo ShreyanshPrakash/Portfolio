@@ -48,3 +48,30 @@ const dispatch = useDispatch();
 useEffect( () => {
         dispatch( GetPageContentAction( ) );
     }, [ useDispatch ] )
+
+
+5. For axios error, always return err.response from action else wont get anything in the reducer.
+
+
+
+6. How to handle keys for multiple api calls from multiple component ?
+
+well, in most of the cases, backend is gonna send the key.U can use that directly.
+
+// backend
+res.json({
+            [ req.params.documentId ]: content
+        });
+
+// reducer
+return{
+                ...state,
+                uiState: new UIStateModel(),
+                error : new UIErrorModel(),
+                success : {
+                    success: true,
+                    successMessage : action.payload.statusText,
+                    successResponse: action.payload.data
+                },
+                ...action.payload.data     <---- just spread it and the key name coming from the backend will be used.
+            }

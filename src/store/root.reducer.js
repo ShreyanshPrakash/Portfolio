@@ -36,6 +36,8 @@ class InitialStateModel{
 
 const rootReducer = ( state = new InitialStateModel(), action ) => {
 
+    console.log( action );
+
     switch( action.type ){
 
         case ActionTypes.INITIATE_API_CALL:
@@ -44,6 +46,31 @@ const rootReducer = ( state = new InitialStateModel(), action ) => {
                 uiState: {
                     ...state.uiState,
                     isPageLoading: true
+                }
+            }
+
+        case ActionTypes.API_CALL_SUCCESS:
+            return{
+                ...state,
+                uiState: new UIStateModel(),
+                error : new UIErrorModel(),
+                success : {
+                    success: true,
+                    successMessage : action.payload.statusText,
+                    successResponse: action.payload.data
+                },
+                ...action.payload.data
+            }
+
+        case ActionTypes.API_CALL_ERRORED:
+            return{
+                ...state,
+                uiState: new UIStateModel(),
+                success: new UISuccessModel(),
+                error: {
+                    hasError : true,
+                    errorMessage: action.payload.data.errorMessage,
+                    errorResponse: action.payload.data
                 }
             }
 

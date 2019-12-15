@@ -1,0 +1,35 @@
+1. Child routing : Router
+
+// parent
+app.use('/restservices/content', cmsRouter );
+
+// child
+
+const cmsRouter = express.Router();
+
+cmsRouter.get( '/:document', ( req, res ) => { console.log( req.param );
+
+    res.json({
+        message: "cms route",
+        route: req.params
+    });
+
+});
+
+module.exports = {cmsRouter};
+
+pay attention to thechild....I am not using next(). It will be wrong using here as i have handled the response here.
+We are using this child router as the middleware and hence we get next but if use use that after modifying the res, then u will get
+error if u call next amd that next entity or route handler say app.get(**) wildcard will also try to handle the res and hence
+will gte the error.
+
+Use next only when the current scope is not changing the res.
+SO say u will fist log, then auth, then make db call then process, then auth then finally attch the response and send.
+In the last one u will use res and all previous use next().
+
+also,
+
+appp.get( '/', ( req,res,next ), ( req,res,next), ( req,res,next ) ){
+
+    
+}

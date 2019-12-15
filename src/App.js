@@ -5,6 +5,10 @@ import { rootRouteConfig } from './config/routes.config';
 import { useSelector } from 'react-redux';
 
 
+// This will act as the module that will load all the component.
+// since this portfolio app is small all, we will need only one module.
+// The whole application will be made using react hooks.
+
 function AppComponent( props ){
     
     const configureRoutes = useCallback( () => rootRouteConfig.map( 
@@ -19,7 +23,7 @@ function AppComponent( props ){
                                 , [] 
                     )
 
-    const state = useSelector( state => console.log( state ) );
+    // const state = useSelector( state => console.log( state ) );
     
     return (
         <React.Fragment>
