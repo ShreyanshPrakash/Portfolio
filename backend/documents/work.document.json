@@ -1,0 +1,62 @@
+[
+    {
+        "title": "PyTrack",
+        "description": "anything can go here",
+        "stack": [
+            {
+                "icon": "",
+                "viewText": "one"
+            },
+            {
+                "icon": "",
+                "viewText": "one"
+            },
+            {
+                "icon": "",
+                "viewText": "one"
+            }
+        ],
+        "links": [
+            {
+                "icon": "",
+                "href": "https://google.com",
+                "viewText": ""
+            },
+            {
+                "icon": "",
+                "href": "https://google.com",
+                "viewText": ""
+            }
+        ]
+    },
+    {
+        "title": "Chat APp",
+        "description": "anything can go here and here",
+        "stack": [
+            {
+                "icon": "",
+                "viewText": "one"
+            },
+            {
+                "icon": "",
+                "viewText": "one"
+            },
+            {
+                "icon": "",
+                "viewText": "one"
+            }
+        ],
+        "links": [
+            {
+                "icon": "",
+                "href": "https://google.com",
+                "viewText": ""
+            },
+            {
+                "icon": "",
+                "href": "https://google.com",
+                "viewText": ""
+            }
+        ]
+    }
+]

@@ -33,3 +33,61 @@ appp.get( '/', ( req,res,next ), ( req,res,next), ( req,res,next ) ){
 
     
 }
+
+
+3. How to pipe data to res.json so that the stream data has a key for the UI code ?
+ex:
+fs.createReadStream(
+            path.join(
+                __dirname, '../', 'documents', `${req.params.documentId}.document.json`
+            )
+        )
+        res.json({
+            [ req.params.documentId ]: content
+        });
+
+solution ?
+
+spreading the response in the uI redux is the best option.That way, the object structure matters in the juson file.
+
+so : 
+home: {
+    intro: {},
+    about: {}
+}
+
+will become home key in reducer in UI.
+
+I like the above method as that will send the data as normal rest and not string or buffer.
+
+Another
+
+let data = fs.createReadStream(
+            path.join(
+                __dirname, '../', 'documents', `${req.params.documentId}.document.json`
+            )
+        )
+
+        data.on( "data", ( data, err ) => {
+            res.json({
+                [ req.params.documentId ]: data   <---- data will go as buffer.Then do toString in the UI, or do it here,
+                // but then in UI u have to do json.parse()
+            });
+        })
+
+The best way :
+
+data.on( "data", ( data, err ) => {
+            res.json({
+                [ req.params.documentId ]: JSON.parse(data.toString())  
+            });
+        })
+
+use toString to convert buffer data to string
+then parse that in the backend itself.Best option
+
+But, since its a buffer, if the whole file is not loaded at a time, then the JSON.parse will throw error 
+as enexpeted end of input.
+So....u cannot use json.parse to parse a piece of stream data.
+
+I think, with streams, all the above methods will have issues.

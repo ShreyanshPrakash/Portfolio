@@ -1,0 +1,171 @@
+{
+    "categories": [
+        {
+            "title": "Web Stack",
+            "groups": [
+                {
+                    "title": "",
+                    "items": [
+                        {
+                            "icon": "",
+                            "viewContent": "React"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "Redux"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "React-router"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "Redux-thunk"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "Javascript ES6"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "Axios"
+                        }
+                    ]
+                },
+                {
+                    "title": "",
+                    "items": [
+                        {
+                            "icon": "",
+                            "viewContent": "Angular"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "TypeScript"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "RxJs"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "NgRx"
+                        }
+                    ]
+                },
+                {
+                    "title": "",
+                    "items": [
+                        {
+                            "icon": "",
+                            "viewContent": "NodeJS"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "ExpressJS"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "MongoDB"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "Git"
+                        }
+                    ]
+                },
+                {
+                    "title": "",
+                    "items": [
+                        {
+                            "icon": "",
+                            "viewContent": "HTML 5"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "CSS 3"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "SCSS"
+                        }
+                    ]
+                },
+                {
+                    "title": "",
+                    "items": [
+                        {
+                            "icon": "",
+                            "viewContent": "HTTP"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "HTTPS"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "WebSocket"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "REST"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "",
+            "groups": [
+                {
+                    "title": "",
+                    "items": [
+                        {
+                            "icon": "",
+                            "viewContent": "Vs Code"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "Robo-3T"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "Webpack"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "Create-react-app"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "Linux"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "DevOps",
+            "subTitle": "Beginner",
+            "groups": [
+                {
+                    "title": "",
+                    "items": [
+                        {
+                            "icon": "",
+                            "viewContent": "Jenkins"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "Kubernetes"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "NgInx"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

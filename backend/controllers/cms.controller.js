@@ -20,7 +20,7 @@ async function getDataFromCMS( documentID ){
     try{
         let client = await getMongoDbClient();
         if( client ){
-            return await client.db('portfolio').collection('cms').find({ id : documentID } ).toArray();
+            return await client.db('portfolio').collection('cms').find({ _id : documentID } ).project({_id: 0}).toArray();
         }
     }catch( err ){
         return new throwError( err )

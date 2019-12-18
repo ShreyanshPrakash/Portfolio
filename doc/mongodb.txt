@@ -1,0 +1,5 @@
+1. client.db('dbName')  will create the db if does not exist.
+2. client.db('dbname').collection('collectionName') will create the collection if does not exist.
+
+But u wont be able to see any of them if there are no documents.
+Hence u must insert one document in any of the collection to be able to see the db.

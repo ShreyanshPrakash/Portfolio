@@ -4,7 +4,7 @@ const apiEndpoints = {
 
     home: "restservices/content/home",
     work: "restservices/content/work",
-    sklills: "restservices/content/skills",
+    skills: "restservices/content/skills",
 
 };
 

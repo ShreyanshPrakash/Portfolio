@@ -75,3 +75,9 @@ return{
                 },
                 ...action.payload.data     <---- just spread it and the key name coming from the backend will be used.
             }
+
+
+7. V important:
+
+U should not use render props and component props in the same <route>, render will be ignored then.
+Use render prop itself to decide what component to load
