@@ -115,7 +115,7 @@
             ]
         },
         {
-            "title": "",
+            "title": "Tooling",
             "groups": [
                 {
                     "title": "",
@@ -131,6 +131,10 @@
                         {
                             "icon": "",
                             "viewContent": "Webpack"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "Babel"
                         },
                         {
                             "icon": "",
