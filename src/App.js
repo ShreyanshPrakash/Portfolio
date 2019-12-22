@@ -2,8 +2,6 @@ import React, { useCallback, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import { rootRouteConfig } from './config/routes.config';
-import { useSelector } from 'react-redux';
-import { HomeComponent } from './component';
 
 
 // This will act as the module that will load all the component.

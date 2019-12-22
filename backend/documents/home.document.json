@@ -6,9 +6,10 @@
         "role": "Full Stack Developer",
         "contacts": [
             {
-                "iconPath": "/assets/icons/github.svg",
+                "iconPath": "/src/assets/icons/github.svg",
                 "altText": "Github icon",
-                "viewText": "Github"
+                "viewText": "Github",
+                "href": "https://github.com/ShreyanshPrakash"
             },
             {
                 "iconPath": "/assets/icons/linkedin.svg",
@@ -18,18 +19,20 @@
             {
                 "iconPath": "/assets/icons/angellist.svg",
                 "altText": "AngelList icon",
-                "viewText": "AngelList"
+                "viewText": "AngelList",
+                "href": "https://angel.co/shreyansh-prakash"
             },
             {
                 "iconPath": "/assets/icons/gmail.svg",
                 "altText": "Gmail icon",
-                "viewText": "Gmail"
+                "viewText": "Gmail",
+                "href": "mailto:avishreyansh@gmail.com"
             }
         ]
     },
     "about": {
         "heading": "About Me",
-        "content": "I need to add this later",
+        "content": "Full Stack developer with passion for tailored solutions and 2+ years of experience in developing and architecting applications from scratch with MEAN/MERN stack. Looking to leverage my knowledge and proven expertise into a full stack developer role. ",
         "buttons": [
             {
                 "buttonText": "Portfolio",

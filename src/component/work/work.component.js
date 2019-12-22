@@ -2,6 +2,7 @@ import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { GetPageContentAction } from '../../store/root.action';
 import { apiEndpoints } from '../../config/api.endpoints';
+import './work.style.css';
 
 function WorkComponent(props) {
 
@@ -20,7 +21,7 @@ function WorkComponent(props) {
 
         return workContent.map((item, index) => {
             return (
-                <div key={index} className="workWrapper">
+                <div key={index} className="workItem">
                     <h2>{item.title}</h2>
                     <p>{item.description}</p>
                     <ul>
@@ -29,8 +30,8 @@ function WorkComponent(props) {
                         })}
                     </ul>
                     <div className="linksWrapper">
-                        { item.links.map( ( link, key ) => {
-                        return <a key={ key } href={ link.href } target="_blank">{ link.viewContent }</a>
+                        {item.links.map((link, key) => {
+                            return <a key={key} href={link.href} target="_blank">{link.viewContent}</a>
                         })}
                     </div>
                 </div>
@@ -40,7 +41,10 @@ function WorkComponent(props) {
 
     return (
         <React.Fragment>
-            {getUiTemplate()}
+            <div className="workWrapper">
+                {/* <h1>Projects</h1> */}
+                {getUiTemplate()}
+            </div>
         </React.Fragment>
     )
 }

@@ -1,0 +1,52 @@
+.homeWrapper{
+    padding-top: 200px;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.introWrapper, .aboutWrapper{
+    flex: 1 300px;
+    margin-bottom: 70px;
+
+}
+
+.introWrapper{
+    flex: 1 300px;
+}
+
+.aboutWrapper{
+    flex: 3 400px;
+}
+
+
+.introWrapper p, .introWrapper h2{
+    margin-bottom: 10px;
+}
+
+.contacts{
+    display: flex;
+    margin-top: 20px;
+}
+
+li{
+    margin-right: 20px;
+}
+
+
+.aboutWrapper p{
+    margin: 10px 0px;
+    line-height: 30px;
+}
+
+.aboutWrapper a {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 20px;
+    background-color: #4458dc ;
+    padding: 10px 30px;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
+}

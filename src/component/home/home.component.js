@@ -1,9 +1,9 @@
 import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { GetPageContentAction } from '../../store/root.action';
 
 import { apiEndpoints } from './../../config/api.endpoints';
+import './home.style.css';
 
 
 function HomeComponent(props) {
@@ -26,13 +26,16 @@ function HomeComponent(props) {
         return (
             <div className='homeWrapper'>
                 <div className='introWrapper'>
-                    <h1>{greeting}</h1>
+                    <h2>{greeting}</h2>
                     <p>{nameHead}</p>
-                    <p>{name}</p>
-                    <p>{role}</p>
-                    <ul>
+                    <h1>{name}</h1>
+                    <h3>{role}</h3>
+                    <ul className="contacts">
                         {contacts.map((contact, index) => {
-                            return <li key={index}>{contact.viewText}</li>
+                            return <li key={index}>
+                                        {/* <img src={ contact.iconPath } alt={ contact.altText } /> */}
+                                        <a href={ contact.href } target="_blank">{contact.viewText}</a>
+                                    </li>
                         })}
                     </ul>
                 </div>
@@ -40,7 +43,7 @@ function HomeComponent(props) {
                     <h2>{heading}</h2>
                     <p>{content}</p>
                     {buttons.map(({ routeLink, buttonText }, index) => {
-                        return <a key={index} href={ routeLink }>{buttonText}</a>
+                        return <a key={index} href={routeLink}>{buttonText}</a>
                     })}
                 </div>
             </div>
