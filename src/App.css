@@ -18,7 +18,14 @@
 }
 
 .menu{
-    height: 20px;
-    width: 50px;
-    background-color: red;
+    cursor: pointer;
+    position: relative;
+    top: 5px;
+}
+
+hr{
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    margin-top: 4px;
 }

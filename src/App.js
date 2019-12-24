@@ -43,7 +43,11 @@ function AppComponent(props) {
             {/* <Suspense fallback={<h1>Loading......</h1>}> */}
             <header className="header">
                 <h1 className="logo">S<sub>P</sub></h1>
-                <div className="menu"></div>
+                <div className="menu">
+                    <hr></hr>
+                    <hr></hr>
+                    <hr></hr>
+                </div>
             </header>
                 <Router>
                     <Switch>
