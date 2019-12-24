@@ -2,6 +2,7 @@ import React, { useCallback, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import { rootRouteConfig } from './config/routes.config';
+import './App.css';
 
 
 // This will act as the module that will load all the component.
@@ -40,6 +41,10 @@ function AppComponent(props) {
     return (
         <React.Fragment>
             {/* <Suspense fallback={<h1>Loading......</h1>}> */}
+            <header className="header">
+                <h1 className="logo">S<sub>P</sub></h1>
+                <div className="menu"></div>
+            </header>
                 <Router>
                     <Switch>
                         {configureRoutes()}
