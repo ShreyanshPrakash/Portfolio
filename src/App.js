@@ -39,13 +39,13 @@ function AppComponent(props) {
 
     return (
         <React.Fragment>
-            <Suspense fallback={<h1>Loading......</h1>}>
+            {/* <Suspense fallback={<h1>Loading......</h1>}> */}
                 <Router>
                     <Switch>
                         {configureRoutes()}
                     </Switch>
                 </Router>
-            </Suspense>
+            {/* </Suspense> */}
         </React.Fragment>
     )
 }
