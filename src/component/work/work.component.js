@@ -22,9 +22,9 @@ function WorkComponent(props) {
         return workContent.map((item, index) => {
             return (
                 <div key={index} className="workItem">
-                    <h2>{item.title}</h2>
-                    <p>{item.description}</p>
-                    <ul>
+                    <h2 className="projectTile">{item.title}</h2><hr></hr>
+                    <p className="description">{item.description}</p>
+                    <ul className="techStack">
                         {item.stack.map((stack, key) => {
                             return <li key={key}>{stack.viewContent}</li>
                         })}
@@ -41,8 +41,8 @@ function WorkComponent(props) {
 
     return (
         <React.Fragment>
+            <h1 className="title">Projects</h1>
             <div className="workWrapper">
-                {/* <h1>Projects</h1> */}
                 {getUiTemplate()}
             </div>
         </React.Fragment>
