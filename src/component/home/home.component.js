@@ -43,7 +43,7 @@ function HomeComponent(props) {
                     <h2>{heading}</h2>
                     <p>{content}</p>
                     {buttons.map(({ routeLink, buttonText }, index) => {
-                        return <a key={index} href={routeLink}>{buttonText}</a>
+                        return <a key={index} href={routeLink} className={buttonText.toLowerCase()}>{buttonText}</a>
                     })}
                 </div>
             </div>
