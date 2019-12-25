@@ -10,6 +10,18 @@ const app = express();
 
 app.use( loggerMiddleWare, corsMiddleWare )
 
+app.use( ( req, res, next ) => {
+
+    res.set({
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': '*',
+        'Access-Control-Allow-Headers': '*'
+    })
+
+    next();
+})
+
+
 app.use('/restservices/content', cmsRouter );
 
 // can be pushed into static router file.
