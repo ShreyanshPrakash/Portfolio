@@ -16,7 +16,7 @@ function HomeComponent(props) {
 
     const homeContent = useSelector(state => state.home);
 
-    const getUITemplate = useCallback(() => {
+    const getUITemplate = useCallback( () => {
         if (!homeContent) {
             return <p>Loading.....</p>
         }
@@ -34,7 +34,7 @@ function HomeComponent(props) {
                         {contacts.map((contact, index) => {
                             return <li key={index}>
                                         {/* <img src={ contact.iconPath } alt={ contact.altText } /> */}
-                                        <a href={ contact.href } target="_blank">{contact.viewText}</a>
+                                        <a href={ contact.href } target="_blank" rel="noopener noreferrer">{contact.viewText}</a>
                                     </li>
                         })}
                     </ul>
@@ -48,7 +48,7 @@ function HomeComponent(props) {
                 </div>
             </div>
         )
-    })
+    }, [ homeContent ] )
 
     return (
         <React.Fragment>

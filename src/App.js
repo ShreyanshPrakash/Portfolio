@@ -1,4 +1,4 @@
-import React, { useCallback, Suspense } from 'react';
+import React, { useCallback, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
 
 import { rootRouteConfig } from './config/routes.config';
@@ -38,9 +38,14 @@ function AppComponent(props) {
     // u can use await to async the call and wait the route.
     // once u have data, then return the component else dont.
 
+    const [ menuStyle, setMenuStyle ] = useState('close');
+
     const handleMenuClick = useCallback( () => {
-        console.log("Clicked");
-    })
+        if( menuStyle === 'open' )
+            setMenuStyle('close');
+        else if( menuStyle === 'close' )
+            setMenuStyle('open');
+    }, [ menuStyle ] )
 
     return (
         <React.Fragment>
@@ -55,6 +60,7 @@ function AppComponent(props) {
                         <hr></hr>
                         <hr></hr>
                         <hr></hr>
+                        <span className={ menuStyle } ></span>
                     </div>
                 </header>
                 <Switch>
