@@ -1,5 +1,5 @@
 import React, { useCallback, Suspense } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
 
 import { rootRouteConfig } from './config/routes.config';
 import './App.css';
@@ -38,23 +38,29 @@ function AppComponent(props) {
     // u can use await to async the call and wait the route.
     // once u have data, then return the component else dont.
 
+    const handleMenuClick = useCallback( () => {
+        console.log("Clicked");
+    })
+
     return (
         <React.Fragment>
-            {/* <Suspense fallback={<h1>Loading......</h1>}> */}
-            <header className="header">
-                <h1 className="logo">S<sub>P</sub></h1>
-                <div className="menu">
-                    <hr></hr>
-                    <hr></hr>
-                    <hr></hr>
-                </div>
-            </header>
-                <Router>
-                    <Switch>
-                        {configureRoutes()}
-                    </Switch>
-                </Router>
-            {/* </Suspense> */}
+            <Router>
+                <header className="header">
+                    <h1 className="logo">
+                        <Link to="/home">
+                            S<sub>P</sub>
+                        </Link>
+                    </h1>
+                    <div className="menu" onClick={ handleMenuClick }>
+                        <hr></hr>
+                        <hr></hr>
+                        <hr></hr>
+                    </div>
+                </header>
+                <Switch>
+                    {configureRoutes()}
+                </Switch>
+            </Router>
         </React.Fragment>
     )
 }
