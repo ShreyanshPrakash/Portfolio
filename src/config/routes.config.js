@@ -7,7 +7,7 @@ import {
 const rootRouteConfig = [
 
     { path: '/home', component: HomeComponent, authGuard: false },
-    { path: '/work', component: WorkComponent, authGuard: false },
+    { path: '/portfolio', component: WorkComponent, authGuard: false },
     { path: '/skills', component: SkillsComponent, authGuard: false },
     { path: '/', exact: true, component: HomeComponent, authGuard: false },
     // { path: '', exact: true, component: HomeComponent, authGuard: false },

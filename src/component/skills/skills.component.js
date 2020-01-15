@@ -9,12 +9,13 @@ import './skills.style.css';
 function SkillsComponent(props) {
 
     const dispatch = useDispatch();
+    const skillsContent = useSelector(state => state.skills);
 
     useEffect(() => {
-        dispatch(GetPageContentAction(apiEndpoints.skills));
-    }, [dispatch])
+        if (!skillsContent)
+            dispatch(GetPageContentAction(apiEndpoints.skills));
+    }, [dispatch, skillsContent])
 
-    const skillsContent = useSelector(state => state.skills);
 
     const getUiTemplate = useCallback(() => {
         if (!skillsContent) {

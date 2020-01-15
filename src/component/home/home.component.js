@@ -1,7 +1,8 @@
 import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { GetPageContentAction } from '../../store/root.action';
+import { Link } from 'react-router-dom';
 
+import { GetPageContentAction } from '../../store/root.action';
 import { apiEndpoints } from './../../config/api.endpoints';
 import './home.style.css';
 
@@ -9,12 +10,13 @@ import './home.style.css';
 function HomeComponent(props) {
 
     const dispatch = useDispatch();
+    const homeContent = useSelector(state => state.home);
 
     useEffect(() => {
-        dispatch(GetPageContentAction(apiEndpoints.home));
-    }, [dispatch])
+        if( !homeContent )
+            dispatch(GetPageContentAction(apiEndpoints.home));
+    }, [dispatch, homeContent])
 
-    const homeContent = useSelector(state => state.home);
 
     const getUITemplate = useCallback( () => {
         if (!homeContent) {
@@ -33,8 +35,10 @@ function HomeComponent(props) {
                     <ul className="contacts">
                         {contacts.map((contact, index) => {
                             return <li key={index}>
-                                        {/* <img src={ contact.iconPath } alt={ contact.altText } /> */}
-                                        <a href={ contact.href } target="_blank" rel="noopener noreferrer">{contact.viewText}</a>
+                                        <a href={ contact.href } target="_blank" rel="noopener noreferrer" 
+                                            title={ contact.altText.split(' ')[0] }>
+                                            <img src={ contact.iconPath } alt={ contact.altText } />
+                                        </a>
                                     </li>
                         })}
                     </ul>
@@ -43,7 +47,7 @@ function HomeComponent(props) {
                     <h2>{heading}</h2>
                     <p>{content}</p>
                     {buttons.map(({ routeLink, buttonText }, index) => {
-                        return <a key={index} href={routeLink} className={buttonText.toLowerCase()}>{buttonText}</a>
+                        return <Link key={index} to={routeLink} className={buttonText.toLowerCase()}>{buttonText}</Link>
                     })}
                 </div>
             </div>

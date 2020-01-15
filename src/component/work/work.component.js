@@ -8,18 +8,19 @@ function WorkComponent(props) {
 
     const dispatch = useDispatch();
 
-    const workContent = useSelector(state => state.work);
+    const portFolioContent = useSelector(state => state.portfolio);
 
     useEffect(() => {
-        dispatch(GetPageContentAction(apiEndpoints.work))
-    }, [dispatch])
+        if (!portFolioContent)
+            dispatch(GetPageContentAction(apiEndpoints.portfolio))
+    }, [dispatch, portFolioContent])
 
     const getUiTemplate = useCallback(() => {
-        if (!workContent) {
+        if (!portFolioContent) {
             return <p>Loading ..............</p>
         }
 
-        return workContent.map((item, index) => {
+        return portFolioContent.map((item, index) => {
             return (
                 <div key={index} className="workItem">
                     <h2 className="projectTile">{item.title}</h2><hr></hr>
@@ -37,7 +38,7 @@ function WorkComponent(props) {
                 </div>
             )
         })
-    }, [workContent])
+    }, [portFolioContent])
 
     return (
         <React.Fragment>
