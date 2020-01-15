@@ -4,7 +4,7 @@
             "title": "Web Stack",
             "groups": [
                 {
-                    "title": "",
+                    "title": "React Ecosystem",
                     "items": [
                         {
                             "icon": "",
@@ -33,11 +33,11 @@
                     ]
                 },
                 {
-                    "title": "",
+                    "title": "Angular Ecosystem",
                     "items": [
                         {
                             "icon": "",
-                            "viewContent": "Angular"
+                            "viewContent": "Angular 2+"
                         },
                         {
                             "icon": "",
@@ -54,7 +54,7 @@
                     ]
                 },
                 {
-                    "title": "",
+                    "title": "Backend",
                     "items": [
                         {
                             "icon": "",
@@ -75,7 +75,7 @@
                     ]
                 },
                 {
-                    "title": "",
+                    "title": "UI",
                     "items": [
                         {
                             "icon": "",
@@ -92,7 +92,7 @@
                     ]
                 },
                 {
-                    "title": "",
+                    "title": "Protocols",
                     "items": [
                         {
                             "icon": "",
@@ -150,7 +150,6 @@
         },
         {
             "title": "DevOps",
-            "subTitle": "Beginner",
             "groups": [
                 {
                     "title": "",

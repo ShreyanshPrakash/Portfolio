@@ -12,3 +12,16 @@
 1. With flex box, if there is no wrap, then the flex box will try to keep all the elemnts in the same row.
 Hence u will have weird layout isues.Make sure that if u have list of elements in a row,
 u aply wrap to them so that when there is no space the elements can move to the next line.
+
+
+2. flex-box :
+if u have say 10 children in a container, u want all of them to have flex properties except one or two,
+then :
+parent{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+childToExculde{
+    flex-basis: 100%;
+}

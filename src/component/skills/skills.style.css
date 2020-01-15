@@ -1,0 +1,64 @@
+
+.skillsWrapper{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.skillsWrapper .categoryWrapper{
+
+    background-color: #fff;
+    box-shadow: 0px 10px 30px #ecf0f1;
+    border-radius: 7px;
+
+    margin: 30px 0px;
+    padding: 30px 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+
+}
+
+.skillsWrapper .categoryWrapper h2:first-child{
+    flex-basis: 100%;
+    margin-bottom: 10px;
+}
+
+.skillsWrapper .categoryWrapper .groupWrapper{
+
+    /* background-color: #4458dc; */
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px 20px;
+    flex-basis: 360px;
+
+}
+
+.skillsWrapper .categoryWrapper .groupWrapper ul{
+
+    line-height: 40px;
+    padding-left: 20px;
+    padding-top: 10px;
+
+}
+
+/* mapping the child of a container to the child of other container */
+.skillsWrapper .categoryWrapper:last-child .groupWrapper{
+
+    height: 300px;
+
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px){
+
+    .skillsWrapper{
+        display: inherit;
+    }
+
+}
+

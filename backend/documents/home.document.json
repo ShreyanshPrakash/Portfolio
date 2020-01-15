@@ -14,7 +14,8 @@
             {
                 "iconPath": "/assets/icons/linkedin.svg",
                 "altText": "Linkedin icon",
-                "viewText": "LinkedIn"
+                "viewText": "LinkedIn",
+                "href": "https://www.linkedin.com/in/shreyansh-prakash-979284118"
             },
             {
                 "iconPath": "/assets/icons/angellist.svg",

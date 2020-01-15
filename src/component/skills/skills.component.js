@@ -1,7 +1,9 @@
 import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { GetPageContentAction } from '../../store/root.action';
 import { apiEndpoints } from '../../config/api.endpoints';
+import './skills.style.css';
 
 
 function SkillsComponent(props) {
@@ -24,10 +26,16 @@ function SkillsComponent(props) {
                     return (
                         <div className="categoryWrapper" key={categoryIndex}>
                             <h2>{category.title}</h2>
-                            {category.subTitle ? <span>{category.subTitle}</span> : null}
+                            {category.subTitle ? <span className="subTitle">{category.subTitle}</span> : null}
                             {category.groups.map((group, index) => {
                                 return (
                                     <div className="groupWrapper" key={index}>
+                                        { group.title 
+                                            ?   <>
+                                                    <h3>{group.title}</h3><hr />
+                                                </>
+                                            : null
+                                        }
                                         <ul>
                                             {group.items.map((item, itemIndex) => {
                                                 return <li key={itemIndex}>{item.viewContent}</li>
@@ -45,6 +53,7 @@ function SkillsComponent(props) {
 
     return (
         <React.Fragment>
+            <h1 className="title">Skills</h1>
             {getUiTemplate()}
         </React.Fragment>
     )

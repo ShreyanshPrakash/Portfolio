@@ -1,5 +1,5 @@
 .homeWrapper{
-    padding-top: 200px;
+    margin-top: 170px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -7,7 +7,7 @@
 
 
 .introWrapper, .aboutWrapper{
-    margin-bottom: 70px;
+    margin-bottom: 30px;
     background-color: #fff;
     border-radius: 7px;
     /* border: 1px solid black; */
@@ -63,6 +63,10 @@ li{
 
 
 @media only screen and (max-device-width: 768px){
+
+    .homeWrapper{
+        margin-top: 40px;
+    }
 
     .aboutWrapper{
         margin-left: 0px;

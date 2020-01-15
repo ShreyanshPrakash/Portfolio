@@ -38,18 +38,21 @@ function AppComponent(props) {
     // u can use await to async the call and wait the route.
     // once u have data, then return the component else dont.
 
-    const [ menuStyle, setMenuStyle ] = useState('close');
+    // use redux to cache all the static backend content response
+
+    const [ menuStyle, setMenuStyle ] = useState('hovermenu close');
 
     const handleMenuClick = useCallback( () => {
-        if( menuStyle === 'open' )
-            setMenuStyle('close');
-        else if( menuStyle === 'close' )
-            setMenuStyle('open');
+        if( menuStyle === 'hovermenu open' )
+            setMenuStyle('hovermenu close');
+        else if( menuStyle === 'hovermenu close' )
+            setMenuStyle('hovermenu open');
     }, [ menuStyle ] )
 
     return (
         <React.Fragment>
             <Router>
+                {/* haeder will shift to its own component later */}
                 <header className="header">
                     <h1 className="logo">
                         <Link to="/home">
@@ -63,6 +66,7 @@ function AppComponent(props) {
                         <span className={ menuStyle } ></span>
                     </div>
                 </header>
+
                 <Switch>
                     {configureRoutes()}
                 </Switch>
