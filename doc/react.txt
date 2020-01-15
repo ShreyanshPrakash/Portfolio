@@ -81,3 +81,6 @@ return{
 
 U should not use render props and component props in the same <route>, render will be ignored then.
 Use render prop itself to decide what component to load
+
+
+8. HOw to map the size of a container A's child to container B's child ?

@@ -8,18 +8,27 @@ const { corsMiddleWare } = require('./middleware/cors.middleware');
 
 const app = express();
 
+app.use( 
+    express.static(
+        path.join(
+            __dirname, '../', 'build'
+        )
+    )
+)
+
+// middlewares
 app.use( loggerMiddleWare, corsMiddleWare )
 
-app.use( ( req, res, next ) => {
+// app.use( ( req, res, next ) => {
 
-    res.set({
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': '*',
-        'Access-Control-Allow-Headers': '*'
-    })
+//     res.set({
+//         'Access-Control-Allow-Origin': '*',
+//         'Access-Control-Allow-Methods': '*',
+//         'Access-Control-Allow-Headers': '*'
+//     })
 
-    next();
-})
+//     next();
+// })
 
 
 app.use('/restservices/content', cmsRouter );
@@ -27,11 +36,11 @@ app.use('/restservices/content', cmsRouter );
 // can be pushed into static router file.
 app.get( '**', ( req, res ) => {
 
-    // fs.createReadStream()
-    console.log( req.url )
-    res.json({
-        message: "Default route"
-    })
+    fs.createReadStream(
+        path.join(
+            __dirname, '../', 'build', 'index.html'
+        )
+    ).pipe( res )
 
 })
 
