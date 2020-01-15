@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect, Link, NavLink } from 'react-router-dom';
 
 import { rootRouteConfig } from './config/routes.config';
 import './App.css';
@@ -40,14 +40,17 @@ function AppComponent(props) {
 
     // use redux to cache all the static backend content response
 
-    const [ menuStyle, setMenuStyle ] = useState('hovermenu close');
+    const [ navToggle, setNavToggle ] = useState('close');
+    
+    const openNav = useCallback( () => {
+        setNavToggle( "open" );
+        console.log( navToggle );
+    } )
 
-    const handleMenuClick = useCallback( () => {
-        if( menuStyle === 'hovermenu open' )
-            setMenuStyle('hovermenu close');
-        else if( menuStyle === 'hovermenu close' )
-            setMenuStyle('hovermenu open');
-    }, [ menuStyle ] )
+    const closeNav = useCallback( () => {
+        setNavToggle( "close" );
+        console.log( navToggle );
+    } )
 
     return (
         <React.Fragment>
@@ -59,11 +62,19 @@ function AppComponent(props) {
                             S<sub>P</sub>
                         </Link>
                     </h1>
-                    <div className="menu" onClick={ handleMenuClick }>
+                    <div className="menu" onClick={ openNav }>
                         <hr></hr>
                         <hr></hr>
                         <hr></hr>
-                        <span className={ menuStyle } ></span>
+                        {/* <span className={ menuStyle } ></span> */}
+                    </div>
+                    <div className="overlay" id={ navToggle } onClick={ closeNav }>
+                        <a className="closebtn" >&times;</a>
+                        <div className="overlay-content">
+                            <NavLink to="/home">Home</NavLink>
+                            <NavLink to="/portfolio">Portfolio</NavLink>
+                            <NavLink to="/skills">Skills</NavLink>
+                        </div>
                     </div>
                 </header>
 
