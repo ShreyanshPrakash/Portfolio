@@ -5,7 +5,6 @@ import { rootRouteConfig } from './config/routes.config';
 import './App.css';
 import { ModalPortal } from './reuseableComponents/modal/modal.component';
 import { HeaderComponent } from './reuseableComponents/header/header.component';
-// import { initServiceWorkerConfig } from './serviceWorker.init';
 
 
 function AppComponent(props) {
@@ -13,16 +12,7 @@ function AppComponent(props) {
     const [ AddToHomeScreenState, setAddToHomeScreenState ] = useState( null );
     const [ installPromptEvent, setInstallPromptEvent ] = useState( null );
 
-    useEffect( () => {
-        window.addEventListener( 'beforeinstallprompt', handleBeforeInstallPropmt );
-        handleServiceWorkerRegistration();
-
-        return () => {
-            window.removeEventListener( handleBeforeInstallPropmt );
-        }
-    }, [] )
-
-    const handleServiceWorkerRegistration = useCallback( () => {
+    const handleServiceWorkerRegistration = () => {
 
         if( 'serviceWorker' in navigator ){
             navigator.serviceWorker.getRegistrations()
@@ -42,13 +32,24 @@ function AppComponent(props) {
             console.log( "[The client doesn't support service worker]");
         }
     
-    }, [])
+    }
 
-    const handleBeforeInstallPropmt = useCallback( event => {
+    useEffect( () => {
+        window.addEventListener( 'beforeinstallprompt', handleBeforeInstallPropmt );
+        handleServiceWorkerRegistration();
+
+        return () => {
+            window.removeEventListener( handleBeforeInstallPropmt );
+        }
+    }, [] )
+
+    
+
+    const handleBeforeInstallPropmt =  event => {
         event.preventDefault();
         setInstallPromptEvent( event );
         setAddToHomeScreenState( true );
-    }, [setInstallPromptEvent,setAddToHomeScreenState] )
+    }
 
     const configureRoutes = useCallback(() => rootRouteConfig.map(
         (route, index) => {
