@@ -1,31 +1,54 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import { rootRouteConfig } from './config/routes.config';
 import './App.css';
 import { ModalPortal } from './reuseableComponents/modal/modal.component';
 import { HeaderComponent } from './reuseableComponents/header/header.component';
-import { initServiceWorkerConfig } from './serviceWorker.init';
+// import { initServiceWorkerConfig } from './serviceWorker.init';
 
 
 function AppComponent(props) {
 
-    // const [ ]
+    const [ AddToHomeScreenState, setAddToHomeScreenState ] = useState( null );
+    const [ installPromptEvent, setInstallPromptEvent ] = useState( null );
 
     useEffect( () => {
         window.addEventListener( 'beforeinstallprompt', handleBeforeInstallPropmt );
-        initServiceWorkerConfig();
+        handleServiceWorkerRegistration();
 
+        return () => {
+            window.removeEventListener( handleBeforeInstallPropmt );
+        }
     }, [] )
 
-    let eventCache;
-    function handleBeforeInstallPropmt( event ){
-        console.log("Propmpt");
-        event.preventDefault();
-        eventCache = event;
-        // showAddToHomeScreenBanner();
+    const handleServiceWorkerRegistration = useCallback( () => {
 
-    }
+        if( 'serviceWorker' in navigator ){
+            navigator.serviceWorker.getRegistrations()
+                .then( reg => {
+    
+                    if( reg.length === 0 )
+                        navigator.serviceWorker.register( `${process.env.PUBLIC_URL}/serviceWorker.js`)
+                            .then( event => console.log( event) )
+                            .catch( err => console.log( '[Error occured while registering service worker]::\n ', err ) )
+                    else
+                        console.log( "[Service worker is already registred]\n", reg );
+    
+                } )
+                .catch( err => console.log( '[ Error occured while registering service worker ]::\n ', err ) );
+    
+        }else{
+            console.log( "[The client doesn't support service worker]");
+        }
+    
+    }, [])
+
+    const handleBeforeInstallPropmt = useCallback( event => {
+        event.preventDefault();
+        setInstallPromptEvent( event );
+        setAddToHomeScreenState( true );
+    }, [setInstallPromptEvent,setAddToHomeScreenState] )
 
     const configureRoutes = useCallback(() => rootRouteConfig.map(
         (route, index) => {
@@ -39,11 +62,17 @@ function AppComponent(props) {
         , []
     )
 
+    const handleModalClick = useCallback( () => {
+        setAddToHomeScreenState( null );
+        installPromptEvent.prompt();
+        setInstallPromptEvent( null );
+    }, [installPromptEvent] )
+
     return (
         <React.Fragment>
             <Router>
                 <HeaderComponent />
-                <ModalPortal />
+                {  AddToHomeScreenState ? <ModalPortal handleModalClick={ handleModalClick }/> : null }
                 <Switch>
                     {configureRoutes()}
                 </Switch>

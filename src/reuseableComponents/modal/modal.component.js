@@ -5,10 +5,9 @@ import './modal.style.css';
 
 function Modal( props ){
 
-    console.log( props );
 
     return(
-        <div className="modalWrapper">
+        <div className="modalWrapper" onClick={ props.handleModalClick }>
             <h1>Modal text here</h1>
         </div>
     )
