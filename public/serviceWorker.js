@@ -11,6 +11,7 @@ this.addEventListener( 'fetch', handleFetchEvent );
 
 // Event handlers
 function handleInstallEvent( event ){ 
+    this.skipWaiting();  // dont wait for the old worker to stop.
     event.waitUntil( 
         cacheInitialData( event )
     )
