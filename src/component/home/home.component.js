@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -11,6 +11,8 @@ function HomeComponent(props) {
 
     const dispatch = useDispatch();
     const homeContent = useSelector(state => state.home);
+
+    const [ toggle, setToggle ] = useState( true );
 
     useEffect(() => {
         if( !homeContent )
@@ -57,6 +59,16 @@ function HomeComponent(props) {
     return (
         <React.Fragment>
             {getUITemplate()}
+            { toggle
+                ? 
+                    <div>
+                        <h1>This is for pwa, toggle is on</h1>
+                    </div>
+                : 
+                    <div>
+                        <h1>Toggle is off</h1>
+                    </div>
+                }
         </React.Fragment>
     )
 }

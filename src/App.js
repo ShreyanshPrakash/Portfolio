@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Switch, Redirect, Link, NavLink } from 
 
 import { rootRouteConfig } from './config/routes.config';
 import './App.css';
+import { ModalPortal } from './reuseableComponents/modal/modal.component';
+import { HeaderComponent } from './reuseableComponents/header/header.component';
 
 
 // This will act as the module that will load all the component.
@@ -38,46 +40,11 @@ function AppComponent(props) {
     // u can use await to async the call and wait the route.
     // once u have data, then return the component else dont.
 
-    // use redux to cache all the static backend content response
-
-    const [ navToggle, setNavToggle ] = useState('close');
-    
-    const openNav = useCallback( () => {
-        setNavToggle( "open" );
-        console.log( navToggle );
-    } )
-
-    const closeNav = useCallback( () => {
-        setNavToggle( "close" );
-        console.log( navToggle );
-    } )
-
     return (
         <React.Fragment>
             <Router>
-                {/* haeder will shift to its own component later */}
-                <header className="header">
-                    <h1 className="logo">
-                        <Link to="/home">
-                            S<sub>P</sub>
-                        </Link>
-                    </h1>
-                    <div className="menu" onClick={ openNav }>
-                        <hr></hr>
-                        <hr></hr>
-                        <hr></hr>
-                        {/* <span className={ menuStyle } ></span> */}
-                    </div>
-                    <div className="overlay" id={ navToggle } onClick={ closeNav }>
-                        <a className="closebtn" >&times;</a>
-                        <div className="overlay-content">
-                            <NavLink to="/home">Home</NavLink>
-                            <NavLink to="/portfolio">Portfolio</NavLink>
-                            <NavLink to="/skills">Skills</NavLink>
-                        </div>
-                    </div>
-                </header>
-
+                <HeaderComponent />
+                <ModalPortal />
                 <Switch>
                     {configureRoutes()}
                 </Switch>

@@ -84,3 +84,18 @@ Use render prop itself to decide what component to load
 
 
 8. HOw to map the size of a container A's child to container B's child ?
+
+
+9. POrtal content good :
+
+Normally, when you return an element from a component’s render method, it’s mounted into the DOM as a child of the nearest 
+parent node:
+However, sometimes it’s useful to insert a child into a different location in the DOM:
+ // ReactDOM.createPortal(child, container)
+
+ // same as above, child and then container
+ ReactDOM.render(
+    <Provider store={ store }>
+        <AppComponent />
+    </Provider>, 
+document.getElementById('root'));

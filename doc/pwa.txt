@@ -1,0 +1,5 @@
+
+
+1. The pwa is in a way outside the react.
+If u intend to use the notification.push or background sync apis, then u will need to be in the react.
+
