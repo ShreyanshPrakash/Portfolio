@@ -3,3 +3,21 @@
 1. The pwa is in a way outside the react.
 If u intend to use the notification.push or background sync apis, then u will need to be in the react.
 
+
+
+2. Service worker event :
+
+install
+activate   // reload page here, u can now listen to push notifications and all, sync apis
+ready
+fetch
+
+// event.waitUntil( return promise )    // for mainly install event as u will do some work for it to complete
+// event.respondWith( return promise ) // for maily fetch event
+
+3. More info on service worker
+
+event.request will have the whole info of the request made.
+Hence, if u intend to cache only the static file and not the api responses, u can do so here.
+
+event.request.url //

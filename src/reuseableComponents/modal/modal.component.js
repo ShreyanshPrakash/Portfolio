@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import './modal.style.css';
+
 function Modal( props ){
 
     console.log( props );
 
     return(
-        <React.Fragment>
-            <h1>Hello from Portal</h1>
-        </React.Fragment>
+        <div className="modalWrapper">
+            <h1>Modal text here</h1>
+        </div>
     )
 
 }

@@ -1,7 +1,11 @@
-console.log("Service worker file is loaded")
+function initServiceWorkerConfig(){
 
-// Adding service worker related code snippets
-handleServiceWorkerRegistration()
+    window.addEventListener( 'beforeinstallprompt', handleBeforeInstallPropmt );
+    handleServiceWorkerRegistration()
+
+}
+
+
 
 function handleServiceWorkerRegistration(){
 
@@ -26,8 +30,6 @@ function handleServiceWorkerRegistration(){
 }
 
 
-window.addEventListener( 'beforeinstallprompt', handleBeforeInstallPropmt );
-
 let eventCache;
 function handleBeforeInstallPropmt( event ){
     console.log("Propmpt");
@@ -39,4 +41,8 @@ function handleBeforeInstallPropmt( event ){
 
 function showAddToHomeScreenBanner(){
 
+}
+
+export{
+    initServiceWorkerConfig,
 }
