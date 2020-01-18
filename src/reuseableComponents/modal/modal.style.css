@@ -1,7 +1,40 @@
-
-
 .modalWrapper{
+    padding: 10px 10px;
     position: fixed;
-    bottom: 0px;
-    background-color: green;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: rgb(169, 174, 240);
+    border: 1px solid black;  
+    
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.modalWrapper *{
+    padding: 0px 10px;
+}
+
+.modalWrapper button{
+    background-color: rgb(169, 174, 240);
+    border: none;
+    font-size: 40px;
+    line-height: 10px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px){
+
+    .modalWrapper{
+        width: 100%;
+        text-align: center;
+        position: fixed;
+        bottom: 0px;
+        top: auto;
+    }
+
+    .modalWrapper *{
+        padding: 0px;
+    }
+
 }

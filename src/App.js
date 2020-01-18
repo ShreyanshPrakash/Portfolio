@@ -64,16 +64,28 @@ function AppComponent(props) {
     )
 
     const handleModalClick = useCallback( () => {
-        setAddToHomeScreenState( null );
         installPromptEvent.prompt();
+        setAddToHomeScreenState( null );
         setInstallPromptEvent( null );
     }, [installPromptEvent] )
+
+    const closeModal = useCallback( ( event ) => {
+        event.stopPropagation();
+        setAddToHomeScreenState( null );
+        setInstallPromptEvent( null );
+    }, [] )
 
     return (
         <React.Fragment>
             <Router>
                 <HeaderComponent />
-                {  AddToHomeScreenState ? <ModalPortal handleModalClick={ handleModalClick }/> : null }
+                {  AddToHomeScreenState ? 
+                    <ModalPortal 
+                        handleModalClick={ handleModalClick }
+                        closeModal={ closeModal } 
+                    /> : 
+                    null
+                }
                 <Switch>
                     {configureRoutes()}
                 </Switch>
