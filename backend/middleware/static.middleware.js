@@ -7,6 +7,7 @@ const staticMiddleware = ( req, res, next ) => {
             __dirname, '../', 'build'
         )
     )
+    next();
 }
 
 module.exports = { staticMiddleware }
