@@ -51,9 +51,9 @@ async function cacheInitialData( event ){
 async function getRequestedFetchData( event ){
     
     try{
-        // let cacheResponse = await caches.match( event.request );
-        // if ( cacheResponse )
-        //     return cacheResponse
+        let cacheResponse = await caches.match( event.request );
+        if ( cacheResponse )
+            return cacheResponse
        
         let networkResponse = await fetch( event.request );
         let cacheRef = await caches.open( CACHE_NAME );

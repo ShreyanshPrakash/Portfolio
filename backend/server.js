@@ -6,26 +6,22 @@ const https = require('https');
 const { cmsRouter } = require( './routes/cms.route' );
 const { loggerMiddleWare } = require('./middleware/logger.middleware');
 const { corsMiddleWare } = require('./middleware/cors.middleware');
+const { httpRedirectMiddleWare } = require('./middleware/httpRedirect.middleware');
+const { staticMiddleware } = require('./middleware/static.middleware');
 
 const app = express();
 
-app.use( 
-    express.static(
-        path.join(
-            __dirname, '../', 'build'
-        )
-    )
-)
-
-app.use( ( req,res,next ) => {
-    if( req.secure || req.protocol === 'http' )
-        res.redirect("https://" + req.headers.host + req.url);
-})
 
 // middlewares
-app.use( loggerMiddleWare, corsMiddleWare )
+app.use( 
+    loggerMiddleWare, 
+    corsMiddleWare, 
+    httpRedirectMiddleWare, 
+    staticMiddleware
+)
 
 app.use('/restservices/content', cmsRouter );
+
 
 // can be pushed into static router file.
 app.get( '**', ( req, res ) => {
@@ -58,6 +54,5 @@ const httpsCred = {
 }
 
 const httpsServer = https.createServer( httpsCred, app );
-
 httpsServer.listen( 443, () => console.log("Listening at port 443" ) );
 

@@ -37,7 +37,7 @@ class InitialStateModel{
 const rootReducer = ( state = new InitialStateModel(), action ) => {
 
     if( window.location.hostname === 'localhost' )
-        // console.log( action );
+        console.log( action );
 
     switch( action.type ){
 
@@ -89,8 +89,8 @@ const store = createStore(
     applyMiddleware( thunk )
 );
 
-// if( window.location.hostname === 'localhost' )
-    // store.subscribe( () => console.log( store.getState() ) );
+if( window.location.hostname === 'localhost' )
+    store.subscribe( () => console.log( store.getState() ) );
 
 export {
     UIErrorModel,

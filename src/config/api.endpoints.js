@@ -1,6 +1,6 @@
 const apiEndpoints = {
 
-    hostname: "http://localhost:4200/",
+    hostname: "",
 
     home: "restservices/content/home",
     portfolio: "restservices/content/portfolio",

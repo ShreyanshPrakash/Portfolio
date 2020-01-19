@@ -10,7 +10,7 @@ import './home.style.css';
 function HomeComponent(props) {
 
     const dispatch = useDispatch();
-    const homeContent = useSelector(state => state.home);
+    const homeContent = useSelector(state => state ? state.home : null);
 
     useEffect(() => {
         if( !homeContent )
