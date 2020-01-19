@@ -1,7 +1,7 @@
 .modalWrapper{
     padding: 10px 10px;
     position: fixed;
-    top: 0px;
+    top: 5px;
     left: 50%;
     transform: translate(-50%, 0);
     /* background-color: rgb(169, 174, 240); */
@@ -45,7 +45,7 @@
         width: 100%;
         text-align: center;
         position: fixed;
-        bottom: 0px;
+        bottom: 5px;
         top: auto;
     }
 
