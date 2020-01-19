@@ -1,8 +1,9 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const { cmsRouter } = require( './routes/cms.route' );
+const https = require('https');
 
+const { cmsRouter } = require( './routes/cms.route' );
 const { loggerMiddleWare } = require('./middleware/logger.middleware');
 const { corsMiddleWare } = require('./middleware/cors.middleware');
 
@@ -56,5 +57,14 @@ function handleUncaughtException( event ){
 
 // when server is up, print the port and also the routes that it is listening to all such details.
 // while starting, try to make connection to the db and print the status
-app.listen( 4200, () => console.log("Listening at port 4200" ) );
+// app.listen( 4200, () => console.log("Listening at port 4200" ) );
+
+const httpsCred = {
+    key: fs.createReadStream('/etc/letsencrypt/live/shreyanshprakash.com/privkey.pem', 'utf8'),
+    cert: fs.createReadStream('/etc/letsencrypt/live/shreyanshprakash.com/cert.pem', 'utf8')
+}
+
+const httpsServer = https.createServer( httpsCred, app );
+
+httpsServer.listen( 4200, () => console.log("Listening at port 4200" ) );
 
