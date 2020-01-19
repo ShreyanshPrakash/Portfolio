@@ -4,11 +4,12 @@
     margin: 0px;
 }
 
-#root{
-    /* background-color: #FBFBFB; */
+body{
     background-color: #F2F2F2;
     font-family: sans-serif ;
+}
 
+#root{
     padding: 20px 7%;
 }
 
