@@ -17,20 +17,13 @@ app.use(
     )
 )
 
+app.use( ( req,res,next ) => {
+    if( req.secure || req.protocol === 'http' )
+        res.redirect("https://" + req.headers.host + req.url);
+})
+
 // middlewares
 app.use( loggerMiddleWare, corsMiddleWare )
-
-// app.use( ( req, res, next ) => {
-
-//     res.set({
-//         'Access-Control-Allow-Origin': '*',
-//         'Access-Control-Allow-Methods': '*',
-//         'Access-Control-Allow-Headers': '*'
-//     })
-
-//     next();
-// })
-
 
 app.use('/restservices/content', cmsRouter );
 
@@ -60,11 +53,11 @@ function handleUncaughtException( event ){
 // app.listen( 4200, () => console.log("Listening at port 4200" ) );
 
 const httpsCred = {
-    key: fs.createReadStream('/etc/letsencrypt/live/shreyanshprakash.com/privkey.pem', 'utf8'),
-    cert: fs.createReadStream('/etc/letsencrypt/live/shreyanshprakash.com/cert.pem', 'utf8')
+    key: fs.readFileSync('/etc/letsencrypt/live/shreyanshprakash.com/privkey.pem', 'utf8'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/shreyanshprakash.com/cert.pem', 'utf8')
 }
 
 const httpsServer = https.createServer( httpsCred, app );
 
-httpsServer.listen( 4200, () => console.log("Listening at port 4200" ) );
+httpsServer.listen( 443, () => console.log("Listening at port 443" ) );
 
