@@ -1,7 +1,7 @@
 .modalWrapper{
     padding: 10px 10px;
     position: fixed;
-    top: 5px;
+    /* top: 5px; */
     left: 50%;
     transform: translate(-50%, 0);
     /* background-color: rgb(169, 174, 240); */
@@ -12,6 +12,10 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+
+    animation-duration: 0.3s;
+    animation-name: slideDown;
+    animation-fill-mode: forwards;
 }
 
 .modalWrapper *{
@@ -42,15 +46,35 @@
 @media only screen and (min-device-width: 320px) and (max-device-width: 767px){
 
     .modalWrapper{
-        width: 100%;
+        width: 95%;
         text-align: center;
         position: fixed;
         bottom: 5px;
         top: auto;
+        animation-name: slideUp;
     }
 
     .modalWrapper *{
         padding: 0px;
     }
 
+}
+
+
+@keyframes slideDown{
+    from {
+        top: 0px;
+    }
+    to {
+        top: 5px;
+    }
+}
+
+@keyframes slideUp{
+    from {
+        bottom: 0px;
+    }
+    to {
+        bottom: 5px;
+    }
 }

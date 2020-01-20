@@ -66,14 +66,19 @@
     border-radius: 7px;
 }
 
-.logo{
-    
+.header .logo{
+    border: 5px solid black;
+}
+
+.header .logo a{
+  color: inherit;
 }
 
 .menu{
     cursor: pointer;
     position: relative;
-    top: 5px;
+    top: 50%;
+    transform: translateY( 25% );
 }
 
 .menu .hovermenu{
@@ -89,5 +94,5 @@
     width: 30px;
     height: 4px;
     background-color: black;
-    margin-top: 4px;
+    margin-top: 5px;
 }
