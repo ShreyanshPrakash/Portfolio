@@ -1,19 +1,19 @@
 {
   "short_name": "Shreyansh",
-  "name": "Shreyansh Prakash's portfolio",
+  "name": "Shreyansh Prakash's Portfolio",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "portfolio-192X192Big.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "portfolio-192X192Big.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "portfolio-512X512Big.png",
       "type": "image/png",
       "sizes": "512x512"
     }
