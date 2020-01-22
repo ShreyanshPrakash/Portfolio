@@ -20,14 +20,6 @@
                         },
                         {
                             "icon": "",
-                            "viewContent": "Redux-thunk"
-                        },
-                        {
-                            "icon": "",
-                            "viewContent": "Javascript ES6"
-                        },
-                        {
-                            "icon": "",
                             "viewContent": "Axios"
                         }
                     ]
@@ -38,10 +30,6 @@
                         {
                             "icon": "",
                             "viewContent": "Angular 2+"
-                        },
-                        {
-                            "icon": "",
-                            "viewContent": "TypeScript"
                         },
                         {
                             "icon": "",
@@ -66,17 +54,29 @@
                         },
                         {
                             "icon": "",
-                            "viewContent": "MongoDB"
+                            "viewContent": "WebSocket"
                         },
                         {
                             "icon": "",
-                            "viewContent": "Git"
+                            "viewContent": "JWT"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "MongoDB"
                         }
                     ]
                 },
                 {
-                    "title": "UI",
+                    "title": "Languages",
                     "items": [
+                        {
+                            "icon": "",
+                            "viewContent": "Javascript (ES6)"
+                        },
+                        {
+                            "icon": "",
+                            "viewContent": "Typescript"
+                        },
                         {
                             "icon": "",
                             "viewContent": "HTML 5"
@@ -88,83 +88,6 @@
                         {
                             "icon": "",
                             "viewContent": "SCSS"
-                        }
-                    ]
-                },
-                {
-                    "title": "Protocols",
-                    "items": [
-                        {
-                            "icon": "",
-                            "viewContent": "HTTP"
-                        },
-                        {
-                            "icon": "",
-                            "viewContent": "HTTPS"
-                        },
-                        {
-                            "icon": "",
-                            "viewContent": "WebSocket"
-                        },
-                        {
-                            "icon": "",
-                            "viewContent": "REST"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "title": "Tooling",
-            "groups": [
-                {
-                    "title": "",
-                    "items": [
-                        {
-                            "icon": "",
-                            "viewContent": "Vs Code"
-                        },
-                        {
-                            "icon": "",
-                            "viewContent": "Robo-3T"
-                        },
-                        {
-                            "icon": "",
-                            "viewContent": "Webpack"
-                        },
-                        {
-                            "icon": "",
-                            "viewContent": "Babel"
-                        },
-                        {
-                            "icon": "",
-                            "viewContent": "Create-react-app"
-                        },
-                        {
-                            "icon": "",
-                            "viewContent": "Linux"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "title": "DevOps",
-            "groups": [
-                {
-                    "title": "",
-                    "items": [
-                        {
-                            "icon": "",
-                            "viewContent": "Jenkins"
-                        },
-                        {
-                            "icon": "",
-                            "viewContent": "Kubernetes"
-                        },
-                        {
-                            "icon": "",
-                            "viewContent": "NgInx"
                         }
                     ]
                 }

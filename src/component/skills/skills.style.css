@@ -48,11 +48,11 @@
 }
 
 /* mapping the child of a container to the child of other container */
-.skillsWrapper .categoryWrapper:last-child .groupWrapper{
+/* .skillsWrapper .categoryWrapper:last-child .groupWrapper{
 
     height: 300px;
 
-}
+} */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 768px){
 
