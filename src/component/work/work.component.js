@@ -31,7 +31,7 @@ function WorkComponent(props) {
                         })}
                     </ul>
                     <div className="linksWrapper">
-                        {item.links.map((link, key) => {
+                        { item.links && item.links.map((link, key) => {
                             return <a key={key} href={link.href} target="_blank" rel="noopener noreferrer">{link.viewContent}</a>
                         })}
                     </div>

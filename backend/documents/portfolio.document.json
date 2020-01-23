@@ -1,169 +1,41 @@
 [
     {
         "title": "PyTrack",
-        "description": "anything can go here",
+        "description": "Developed a",
         "stack": [
             {
                 "icon": "",
-                "viewContent": "one"
+                "viewContent": "Python"
             },
             {
                 "icon": "",
-                "viewContent": "one"
-            },
-            {
-                "icon": "",
-                "viewContent": "one"
-            }
-        ],
-        "links": [
-            {
-                "icon": "",
-                "href": "https://google.com",
-                "viewContent": "Source Code"
-            },
-            {
-                "icon": "",
-                "href": "https://google.com",
-                "viewContent": "Preview"
+                "viewContent": "OpenCV"
             }
         ]
     },
     {
-        "title": "Chat APp",
+        "title": "Adaptive Video Streaming",
         "description": "anything can go here and here",
         "stack": [
             {
                 "icon": "",
-                "viewContent": "one"
+                "viewContent": "React"
             },
             {
                 "icon": "",
-                "viewContent": "one"
+                "viewContent": "NodeJS"
             },
             {
                 "icon": "",
-                "viewContent": "one"
-            }
-        ],
-        "links": [
-            {
-                "icon": "",
-                "href": "https://google.com",
-                "viewContent": "Source Code"
+                "viewContent": "ExpressJS"
             },
             {
                 "icon": "",
-                "href": "https://google.com",
-                "viewContent": "Preview"
-            }
-        ]
-    },
-    {
-        "title": "Chat APp",
-        "description": "anything can go here and here",
-        "stack": [
-            {
-                "icon": "",
-                "viewContent": "one"
+                "viewContent": "DASH/HLS"
             },
             {
                 "icon": "",
-                "viewContent": "one"
-            },
-            {
-                "icon": "",
-                "viewContent": "one"
-            }
-        ],
-        "links": [
-            {
-                "icon": "",
-                "href": "https://google.com",
-                "viewContent": "Source Code"
-            },
-            {
-                "icon": "",
-                "href": "https://google.com",
-                "viewContent": "Preview"
-            }
-        ]
-    },
-    {
-        "title": "Chat APp",
-        "description": "anything can go here and here",
-        "stack": [
-            {
-                "icon": "",
-                "viewContent": "one"
-            },
-            {
-                "icon": "",
-                "viewContent": "one"
-            },
-            {
-                "icon": "",
-                "viewContent": "one"
-            }
-        ],
-        "links": [
-            {
-                "icon": "",
-                "href": "https://google.com",
-                "viewContent": "Source Code"
-            },
-            {
-                "icon": "",
-                "href": "https://google.com",
-                "viewContent": "Preview"
-            }
-        ]
-    },
-    {
-        "title": "Chat APp",
-        "description": "anything can go here and here",
-        "stack": [
-            {
-                "icon": "",
-                "viewContent": "one"
-            },
-            {
-                "icon": "",
-                "viewContent": "one"
-            },
-            {
-                "icon": "",
-                "viewContent": "one"
-            }
-        ],
-        "links": [
-            {
-                "icon": "",
-                "href": "https://google.com",
-                "viewContent": "Source Code"
-            },
-            {
-                "icon": "",
-                "href": "https://google.com",
-                "viewContent": "Preview"
-            }
-        ]
-    },
-    {
-        "title": "Chat APp",
-        "description": "anything can go here and here",
-        "stack": [
-            {
-                "icon": "",
-                "viewContent": "one"
-            },
-            {
-                "icon": "",
-                "viewContent": "one"
-            },
-            {
-                "icon": "",
-                "viewContent": "one"
+                "viewContent": "ffmpeg"
             }
         ],
         "links": [
