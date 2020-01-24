@@ -43,11 +43,8 @@ function GetPageContentAction( payload ){
             dispatch( InitiateApiCallAction('Initiate') )
             let response = await getData( payload );
             dispatch( ApiSuccessAction( response ) )
-        }catch( err ){ console.dir( err );
-            if( err.message === 'Network Error')
-                dispatch( ApiErrorAction( { message: err.message } ) )
-            else
-                dispatch( ApiErrorAction( err.response.data ) )
+        }catch( err ){
+            dispatch( ApiErrorAction( err ) )
         }
     }
 

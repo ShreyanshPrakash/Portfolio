@@ -70,7 +70,7 @@ const rootReducer = ( state = new InitialStateModel(), action ) => {
                 success: new UISuccessModel(),
                 error: {
                     hasError : true,
-                    errorMessage: action.payload.errorMessage,
+                    errorMessage: action.payload.response ? action.payload.response.data : action.payload.message,
                     errorResponse: action.payload
                 }
             }
