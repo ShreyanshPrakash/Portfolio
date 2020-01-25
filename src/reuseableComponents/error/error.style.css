@@ -1,17 +1,37 @@
 .errorWrapper{
-    border: 1px solid black;
-    /* padding: 30px; */
+    /* border: 3px solid black; */
     border-radius: 30px;
     margin-top: 40px;
     display: flex;
+    overflow: hidden;
 }
 
 .errorWrapper .errorIcon{
-    background-color: black;
-    width: 10%;
+    background-color: #262626;
+    color: red;
+    padding: 20px;
+    font-size: 40px;
+    flex: 1;
+    line-height: 1;
 }
 
 .errorWrapper .errorMessage{
     font-size: 25px;
-    background-color: red;
+    background-color: #DC3545;
+    padding: 20px;
+    flex: 30;
+    vertical-align: middle;
+    line-height: 2;
+}
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px){
+
+    .errorWrapper .errorIcon{
+        display: none;
+    }
+
+    .errorWrapper .errorMessage{
+        font-size: 20px;
+    }
 }

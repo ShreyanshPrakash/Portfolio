@@ -13,12 +13,16 @@ import {
     HeaderComponent,
     ErrorComponent,
 } from './reuseableComponents';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function AppComponent(props) {
 
     const [ AddToHomeScreenState, setAddToHomeScreenState ] = useState( null );
     const [ installPromptEvent, setInstallPromptEvent ] = useState( null );
+
+    const dispatch = useDispatch();
+    const applicationState = useSelector( state => state );
 
     const handleServiceWorkerRegistration = () => {
 
@@ -87,7 +91,7 @@ function AppComponent(props) {
         <React.Fragment>
             <Router>
                 <HeaderComponent />
-                <ErrorComponent />
+                { applicationState.error.hasError ? <ErrorComponent /> : null }
                 {  AddToHomeScreenState ? 
                     <ModalPortal 
                         handleModalClick={ handleModalClick }

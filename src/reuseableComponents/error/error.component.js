@@ -14,7 +14,7 @@ function ErrorComponent( props ){
 
     return(
         <div className='errorWrapper'>
-            <div className='errorIcon'>I</div>
+            <div className='errorIcon'>&#9888;</div>
             <div className='errorMessage'>
                 Something went wrong. Please try again later.
             </div>
