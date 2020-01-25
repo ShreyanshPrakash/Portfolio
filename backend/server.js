@@ -16,7 +16,7 @@ const app = express();
 app.use( 
     loggerMiddleWare, 
     corsMiddleWare, 
-    httpRedirectMiddleWare, 
+    httpRedirectMiddleWare,
     // staticMiddleware
 )
 

@@ -1,0 +1,17 @@
+.errorWrapper{
+    border: 1px solid black;
+    /* padding: 30px; */
+    border-radius: 30px;
+    margin-top: 40px;
+    display: flex;
+}
+
+.errorWrapper .errorIcon{
+    background-color: black;
+    width: 10%;
+}
+
+.errorWrapper .errorMessage{
+    font-size: 25px;
+    background-color: red;
+}

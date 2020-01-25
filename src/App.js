@@ -1,10 +1,18 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { 
+    BrowserRouter as Router, 
+    Route, 
+    Switch, 
+    Redirect
+} from 'react-router-dom';
 
 import { rootRouteConfig } from './config/routes.config';
 import './App.css';
-import { ModalPortal } from './reuseableComponents/modal/modal.component';
-import { HeaderComponent } from './reuseableComponents/header/header.component';
+import { 
+    ModalPortal,
+    HeaderComponent,
+    ErrorComponent,
+} from './reuseableComponents';
 
 
 function AppComponent(props) {
@@ -79,6 +87,7 @@ function AppComponent(props) {
         <React.Fragment>
             <Router>
                 <HeaderComponent />
+                <ErrorComponent />
                 {  AddToHomeScreenState ? 
                     <ModalPortal 
                         handleModalClick={ handleModalClick }
