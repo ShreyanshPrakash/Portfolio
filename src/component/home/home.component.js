@@ -20,7 +20,7 @@ function HomeComponent(props) {
 
     const getUITemplate = useCallback( () => {
         if (!homeContent) {
-            return <p>Loading.....</p>
+            return null;
         }
         let { intro, about } = homeContent;
         let { greeting, nameHead, name, role, contacts } = intro;

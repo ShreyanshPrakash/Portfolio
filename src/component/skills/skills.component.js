@@ -19,7 +19,7 @@ function SkillsComponent(props) {
 
     const getUiTemplate = useCallback(() => {
         if (!skillsContent) {
-            return <p>Loading.....</p>
+            return null;
         }
         return (
             <div className="skillsWrapper">

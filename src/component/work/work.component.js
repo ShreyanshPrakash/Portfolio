@@ -17,7 +17,7 @@ function WorkComponent(props) {
 
     const getUiTemplate = useCallback(() => {
         if (!portFolioContent) {
-            return <p>Loading ..............</p>
+            return null;
         }
 
         return portFolioContent.map((item, index) => {

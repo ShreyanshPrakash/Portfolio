@@ -99,6 +99,15 @@ function AppComponent(props) {
                     /> : 
                     null
                 }
+                <div className="loading">
+                    <div className="spinner"></div>
+                </div>
+                {/* { applicationState.uiState.isPageLoading ?
+                    <div className="loading">
+
+                    </div>
+                    : null
+                } */}
                 <Switch>
                     {configureRoutes()}
                 </Switch>
