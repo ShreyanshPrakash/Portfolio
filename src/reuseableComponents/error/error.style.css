@@ -4,6 +4,8 @@
     margin-top: 40px;
     display: flex;
     overflow: hidden;
+
+    animation: fadeIn 0.1s linear;
 }
 
 .errorWrapper .errorIcon{
@@ -33,5 +35,18 @@
 
     .errorWrapper .errorMessage{
         font-size: 20px;
+        background-color: transparent;
+        color: #DC3545;
+        line-height: initial;
+    }
+}
+
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }
