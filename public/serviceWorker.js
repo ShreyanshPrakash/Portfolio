@@ -62,6 +62,13 @@ async function getRequestedFetchData( event ){
         return networkResponse;
     }catch( err ){
         console.log(" Error while trying to fetch requested data ", err )
+        return new Response(
+            '',
+            {
+                status: 503,
+                statusText: err
+            }
+        );
     }
 
 }

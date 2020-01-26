@@ -1,16 +1,8 @@
 import React from 'react';
-
-
 import './error.style.css';
-import { useDispatch, useSelector } from 'react-redux';
 
 
 function ErrorComponent( props ){
-
-    const dispatch = useDispatch();
-    const errorState = useSelector( state => state.error );
-
-    console.log( errorState );
 
     return(
         <div className='errorWrapper fadeIn'>

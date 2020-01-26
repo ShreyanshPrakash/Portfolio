@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
     BrowserRouter as Router,
     Route,
@@ -21,7 +21,6 @@ function AppComponent(props) {
     const [AddToHomeScreenState, setAddToHomeScreenState] = useState(null);
     const [installPromptEvent, setInstallPromptEvent] = useState(null);
 
-    const dispatch = useDispatch();
     const applicationState = useSelector(state => state);
 
     const handleServiceWorkerRegistration = () => {
