@@ -2,7 +2,7 @@ import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { GetPageContentAction } from '../../store/root.action';
+import { GetPageContentAction, ResetUIStateAction } from '../../store/root.action';
 import { apiEndpoints } from './../../config/api.endpoints';
 import './home.style.css';
 
@@ -15,6 +15,8 @@ function HomeComponent(props) {
     useEffect(() => {
         if( !homeContent )
             dispatch(GetPageContentAction(apiEndpoints.home));
+        else
+            dispatch( ResetUIStateAction( 'home' ) )
     }, [dispatch, homeContent])
 
 

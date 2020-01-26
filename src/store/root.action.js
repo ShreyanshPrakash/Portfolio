@@ -3,6 +3,7 @@ import { getData } from "../component/http.service"
 const ActionTypes = {
 
     INITIATE_API_CALL : "[API] Initiate Api call",
+    RESET_UI_STATE : "[UI] Reset the ui state",
 
     API_CALL_SUCCESS : "[API] Api call is resolved successfully",
     API_CALL_FAILED : "[API] Api call failed",
@@ -33,6 +34,13 @@ function ApiSuccessAction( payload ){
     }
 }
 
+function ResetUIStateAction( payload ){
+    return{
+        type: ActionTypes.RESET_UI_STATE,
+        payload: payload
+    }
+}
+
 
 // Async Actions
 
@@ -59,4 +67,5 @@ export {
     ApiErrorAction,
     ApiSuccessAction,
     GetPageContentAction,
+    ResetUIStateAction,
 }

@@ -16,7 +16,7 @@
     },
     {
         "title": "Adaptive Video Streaming ( PWA )",
-        "description": "A video streaming PWA app that adapts the video quality based on the client's bandwidth. Based on the clients network speed, the video player with the help of DASH manifest file switches between the different videos resulution streams.",
+        "description": "A video streaming PWA app that adapts the video quality based on the client's bandwidth. Based on the clients network speed, the video player with the help of DASH manifest file switches between the different videos resolution streams.",
         "stackTitle": "Tech Stack: ",
         "stack": [
             {
@@ -73,54 +73,5 @@
                 "viewContent": "Developing"
             }
         ]
-    },
-    {
-        "title": "Portfolio ( PWA )",
-        "description": "",
-        "stackTitle": "Tech Stack: ",
-        "stack": [
-            {
-                "icon": "",
-                "viewContent": "React"
-            },
-            {
-                "icon": "",
-                "viewContent": "Redux"
-            },
-            {
-                "icon": "",
-                "viewContent": "React-Router"
-            },
-            {
-                "icon": "",
-                "viewContent": "Axios"
-            },
-            {
-                "icon": "",
-                "viewContent": "NodeJS"
-            },
-            {
-                "icon": "",
-                "viewContent": "ExpressJS"
-            },
-            {
-                "icon": "",
-                "viewContent": "MongoDB"
-            }
-        ]
-    },
-    {
-        "title": "Chat App ( PWA )",
-        "description": "",
-        "stackTitle": "Tech Stack: ",
-        "stack": [
-            {
-                "icon": "",
-                "viewContent": "Python"
-            },
-            {
-                "icon": "",
-                "viewContent": "OpenCV"
-            }
-        ]
-    }]
+    }
+]
