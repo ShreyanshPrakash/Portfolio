@@ -19,7 +19,7 @@ function SkillsComponent(props) {
 
     return !skillsContent ? null :
 
-        <React.Fragment>
+        <div className="skillsPageWrapper fadeIn">
             <h1 className="title">Skills</h1>
             <div className="skillsWrapper">
                 {skillsContent.categories.map((category, categoryIndex) => {
@@ -48,7 +48,7 @@ function SkillsComponent(props) {
                     )
                 })}
             </div>
-        </React.Fragment>
+        </div>
 
 }
 

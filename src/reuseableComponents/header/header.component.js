@@ -18,7 +18,7 @@ function HeaderComponent(props) {
     }, [navToggle])
 
     return (
-        <header className="header">
+        <header className="header fadeIn">
             <h1 className="logo">
                 <NavLink to="/home">
                     S<sub>P</sub>

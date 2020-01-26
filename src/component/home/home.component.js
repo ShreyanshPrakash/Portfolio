@@ -26,7 +26,7 @@ function HomeComponent(props) {
         let { greeting, nameHead, name, role, contacts } = intro;
         let { heading, content, buttons } = about;
         return (
-            <div className='homeWrapper'>
+            <div className='homeWrapper fadeIn'>
                 <div className='introWrapper'>
                     <h2>{greeting}</h2>
                     <p>{nameHead}</p>

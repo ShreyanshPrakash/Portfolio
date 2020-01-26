@@ -17,7 +17,7 @@ function WorkComponent(props) {
 
     return !portFolioContent ? null :
 
-        <React.Fragment>
+        <div className="fadeIn">
             <h1 className="title">Projects</h1>
             <div className="workWrapper">
                 {portFolioContent.map((item, index) => {
@@ -39,7 +39,7 @@ function WorkComponent(props) {
                     )
                 })}
             </div>
-        </React.Fragment>
+        </div>
 }
 
 

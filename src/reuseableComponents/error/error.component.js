@@ -13,7 +13,7 @@ function ErrorComponent( props ){
     console.log( errorState );
 
     return(
-        <div className='errorWrapper'>
+        <div className='errorWrapper fadeIn'>
             <div className='errorIcon'>&#9888;</div>
             <div className='errorMessage'>
                 Something went wrong. Please try again later.
