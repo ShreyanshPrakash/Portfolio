@@ -17,11 +17,10 @@ function SkillsComponent(props) {
     }, [dispatch, skillsContent])
 
 
-    const getUiTemplate = useCallback(() => {
-        if (!skillsContent) {
-            return null;
-        }
-        return (
+    return !skillsContent ? null :
+
+        <React.Fragment>
+            <h1 className="title">Skills</h1>
             <div className="skillsWrapper">
                 {skillsContent.categories.map((category, categoryIndex) => {
                     return (
@@ -31,10 +30,10 @@ function SkillsComponent(props) {
                             {category.groups.map((group, index) => {
                                 return (
                                     <div className="groupWrapper" key={index}>
-                                        { group.title 
-                                            ?   <>
-                                                    <h3>{group.title}</h3><hr />
-                                                </>
+                                        {group.title
+                                            ? <>
+                                                <h3>{group.title}</h3><hr />
+                                            </>
                                             : null
                                         }
                                         <ul>
@@ -49,15 +48,8 @@ function SkillsComponent(props) {
                     )
                 })}
             </div>
-        )
-    }, [skillsContent])
-
-    return (
-        <React.Fragment>
-            <h1 className="title">Skills</h1>
-            {getUiTemplate()}
         </React.Fragment>
-    )
+
 }
 
 

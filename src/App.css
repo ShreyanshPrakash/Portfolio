@@ -1,27 +1,14 @@
-.loading{
-    z-index: 100;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
-}
-
-.loading .spinner{
+.spinner{
     background-color: transparent;
 
     width: 100px;
     height: 100px;
+    margin: 100px auto;
     border-radius: 50%;
-
-    border-top: 3px solid grey;
-    position: relative;
-    top: 50%;
-    left: 50%;
-
-    transform: translate( -50%, 50% );
+    border-top: 3px solid blue;
 
     animation-name: spin;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
 
 }

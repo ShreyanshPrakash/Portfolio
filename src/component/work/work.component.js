@@ -15,39 +15,31 @@ function WorkComponent(props) {
             dispatch(GetPageContentAction(apiEndpoints.portfolio))
     }, [dispatch, portFolioContent])
 
-    const getUiTemplate = useCallback(() => {
-        if (!portFolioContent) {
-            return null;
-        }
+    return !portFolioContent ? null :
 
-        return portFolioContent.map((item, index) => {
-            return (
-                <div key={index} className="workItem">
-                    <h2 className="projectTile">{item.title}</h2><hr></hr>
-                    <p className="description">{item.description}</p>
-                    <ul className="techStack">
-                        {item.stack.map((stack, key) => {
-                            return <li key={key}>{stack.viewContent}</li>
-                        })}
-                    </ul>
-                    <div className="linksWrapper">
-                        { item.links && item.links.map((link, key) => {
-                            return <a key={key} href={link.href} target="_blank" rel="noopener noreferrer">{link.viewContent}</a>
-                        })}
-                    </div>
-                </div>
-            )
-        })
-    }, [portFolioContent])
-
-    return (
         <React.Fragment>
             <h1 className="title">Projects</h1>
             <div className="workWrapper">
-                {getUiTemplate()}
+                {portFolioContent.map((item, index) => {
+                    return (
+                        <div key={index} className="workItem">
+                            <h2 className="projectTile">{item.title}</h2><hr></hr>
+                            <p className="description">{item.description}</p>
+                            <ul className="techStack">
+                                {item.stack.map((stack, key) => {
+                                    return <li key={key}>{stack.viewContent}</li>
+                                })}
+                            </ul>
+                            <div className="linksWrapper">
+                                {item.links && item.links.map((link, key) => {
+                                    return <a key={key} href={link.href} target="_blank" rel="noopener noreferrer">{link.viewContent}</a>
+                                })}
+                            </div>
+                        </div>
+                    )
+                })}
             </div>
         </React.Fragment>
-    )
 }
 
 
