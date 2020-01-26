@@ -26,13 +26,18 @@ function WorkComponent(props) {
                             <h2 className="projectTile">{item.title}</h2><hr></hr>
                             <p className="description">{item.description}</p>
                             <ul className="techStack">
+                                <span className="teckStackTitle">
+                                    <b>{item.stackTitle} </b>
+                                </span>
                                 {item.stack.map((stack, key) => {
                                     return <li key={key}>{stack.viewContent}</li>
                                 })}
                             </ul>
                             <div className="linksWrapper">
                                 {item.links && item.links.map((link, key) => {
-                                    return <a key={key} href={link.href} target="_blank" rel="noopener noreferrer">{link.viewContent}</a>
+                                    return <a key={key} href={link.href} target="_blank" rel="noopener noreferrer" className={link.class}>
+                                        {link.viewContent}
+                                    </a>
                                 })}
                             </div>
                         </div>

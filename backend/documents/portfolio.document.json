@@ -1,7 +1,8 @@
 [
     {
         "title": "PyTrack",
-        "description": "Developed a",
+        "description": "A Computer Vision software that can count and segment vehicles into categories such as car, two-wheeler, HCV, LCV. Also, it can measure the speed of each vehicle from a video stream. Presented the same as a technical paper at American Society of Civil Engineers(ASCE).",
+        "stackTitle": "Tech Stack: ",
         "stack": [
             {
                 "icon": "",
@@ -14,12 +15,25 @@
         ]
     },
     {
-        "title": "Adaptive Video Streaming",
-        "description": "anything can go here and here",
+        "title": "Adaptive Video Streaming ( PWA )",
+        "description": "A video streaming PWA app that adapts the video quality based on the client's bandwidth. Based on the clients network speed, the video player with the help of DASH manifest file switches between the different videos resulution streams.",
+        "stackTitle": "Tech Stack: ",
         "stack": [
             {
                 "icon": "",
                 "viewContent": "React"
+            },
+            {
+                "icon": "",
+                "viewContent": "Redux"
+            },
+            {
+                "icon": "",
+                "viewContent": "React-Router"
+            },
+            {
+                "icon": "",
+                "viewContent": "Axios"
             },
             {
                 "icon": "",
@@ -31,24 +45,82 @@
             },
             {
                 "icon": "",
-                "viewContent": "DASH/HLS"
+                "viewContent": "MongoDB"
+            },
+            {
+                "icon": "",
+                "viewContent": "DASH"
             },
             {
                 "icon": "",
                 "viewContent": "ffmpeg"
+            },
+            {
+                "icon": "",
+                "viewContent": "Shaka-Player"
             }
         ],
         "links": [
             {
                 "icon": "",
-                "href": "https://google.com",
+                "href": "https://github.com/ShreyanshPrakash/AdaptiveVideoStreamApp",
                 "viewContent": "Source Code"
             },
             {
                 "icon": "",
-                "href": "https://google.com",
-                "viewContent": "Preview"
+                "href": "https://github.com/ShreyanshPrakash/AdaptiveVideoStreamApp",
+                "class": "beta",
+                "viewContent": "Developing"
             }
         ]
-    }
-]
+    },
+    {
+        "title": "Portfolio ( PWA )",
+        "description": "",
+        "stackTitle": "Tech Stack: ",
+        "stack": [
+            {
+                "icon": "",
+                "viewContent": "React"
+            },
+            {
+                "icon": "",
+                "viewContent": "Redux"
+            },
+            {
+                "icon": "",
+                "viewContent": "React-Router"
+            },
+            {
+                "icon": "",
+                "viewContent": "Axios"
+            },
+            {
+                "icon": "",
+                "viewContent": "NodeJS"
+            },
+            {
+                "icon": "",
+                "viewContent": "ExpressJS"
+            },
+            {
+                "icon": "",
+                "viewContent": "MongoDB"
+            }
+        ]
+    },
+    {
+        "title": "Chat App ( PWA )",
+        "description": "",
+        "stackTitle": "Tech Stack: ",
+        "stack": [
+            {
+                "icon": "",
+                "viewContent": "Python"
+            },
+            {
+                "icon": "",
+                "viewContent": "OpenCV"
+            }
+        ]
+    }]

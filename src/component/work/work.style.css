@@ -6,6 +6,7 @@
 .workWrapper{
     display: flex;
     flex-wrap: wrap;
+    line-height: 25px;
 }
 
 hr{
@@ -34,6 +35,10 @@ hr{
     flex-wrap: wrap;
 }
 
+.workWrapper .workItem .techStack .teckStackTitle{
+    flex: 100%;
+    display: block;
+}
 
 .workWrapper .workItem .linksWrapper{
     display: flex;
@@ -50,6 +55,12 @@ hr{
     color: white;
     box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
     margin-right: 20px;
+}
+
+.workWrapper .workItem .linksWrapper a[class = 'beta']{
+    background-color: transparent;
+    color: black;
+    border: 2px solid #4458dc;
 }
 
 
