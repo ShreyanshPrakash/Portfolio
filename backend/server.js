@@ -54,13 +54,13 @@ function handleUncaughtException( event ){
 
 // when server is up, print the port and also the routes that it is listening to all such details.
 // while starting, try to make connection to the db and print the status
-app.listen( 80, () => console.log("Listening at port 80" ) );
+app.listen( 4200, () => console.log("Listening at port 4200" ) );
 
-const httpsCred = {
-    key: fs.readFileSync('/etc/letsencrypt/live/shreyanshprakash.com/privkey.pem', 'utf8'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/shreyanshprakash.com/cert.pem', 'utf8')
-}
+// const httpsCred = {
+//     key: fs.readFileSync('/etc/letsencrypt/live/shreyanshprakash.com/privkey.pem', 'utf8'),
+//     cert: fs.readFileSync('/etc/letsencrypt/live/shreyanshprakash.com/cert.pem', 'utf8')
+// }
 
-const httpsServer = https.createServer( httpsCred, app );
-httpsServer.listen( 443, () => console.log("Listening at port 443" ) );
+// const httpsServer = https.createServer( httpsCred, app );
+// httpsServer.listen( 443, () => console.log("Listening at port 443" ) );
 
