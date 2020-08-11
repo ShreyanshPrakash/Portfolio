@@ -53,7 +53,7 @@ const rootReducer = ( state = new InitialStateModel(), action ) => {
         case ActionTypes.RESET_UI_STATE:
             return{
                 ...state,
-                uiState = new UIStateModel()
+                uiState: new UIStateModel()
             }
 
         case ActionTypes.API_CALL_SUCCESS:
